@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 5.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-5.0.dtd">
+
+<hibernate-mapping>
+
+ 	<class name="com.book.store.entity.Book" table="Book">
+		<id name="bookId" type="int">
+			<column name="Book_id" />
+		</id>
+
+		<property name="bookName" column="Book_name" />
+
+		<property name="authorName" column="Author_name" />
+
+		<property name="publisherName" column="Publisher" />
+
+		<property name="categoryName" column="Category" />
+
+		<property name="price" column="price" />
+
+	</class> 
+
+	 <class name="com.book.store.entity.Purchase" table="Purchase">
+		<id name="purchaseNumber" type="int">
+			<column name="Purchase_no" />
+			<generator class="native" />
+		</id>
+
+		<property name="bookId" column="Book_id" type="int" />
+
+		<property name="customerName" column="Customer_name" />
+
+		<property name="customerMobileNumber" column="Customer_mobileno" />
+
+		<property name="purchaseDate" column="Purchase_date" />
+
+		<property name="amount" column="Amount" />
+
+	</class> 
+
+</hibernate-mapping>
